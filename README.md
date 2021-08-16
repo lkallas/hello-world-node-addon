@@ -6,7 +6,7 @@
 4. Run `node index.js` to execute the addon using javascript.
 
 
-###High level overview of the node-gyp's Workflow
+### High level overview of the node-gyp's Workflow
 
 A `binding.gyp` file describes the configuration to build your module, in a JSON-like format. 
 This file gets placed in the root of your package, alongside `package.json`.
@@ -26,7 +26,7 @@ The compiled bindings end up in build/Debug/ or build/Release/, depending on the
 At this point, you can require the .node file with Node.js  
 
 
-## File path bug version > 4.0.0
+## File path **BUG** version > 4.0.0
 
 As can be seen from [binding.gyp](./binding.gyp) file there is a special `action` defined. 
 Actions can be anything. For this example it's just executing a [Python code](./deps/hello-world.py) to print "Hello World!".  
@@ -47,7 +47,7 @@ With `node-gyp@4.0.0` this is not the case:
 
 Clearly something is off with the file paths handling. I suspect `gyp` written in Python to be the culprit.
 
-###Workaround
+### Workaround
 
 Found that providing absolute path in `binding.gyp` file solves the issue. At least with the latest `node-gyp@8.1.0`
 
